@@ -35,14 +35,14 @@ class HomeTableViewCell: UITableViewCell {
     // MARK: IBActions
     @IBAction func incompleteBtnClick(_ sender: UIButton) {
        
-        self.cellDelegate?.didCompletedButtonPress(sender.tag)
+        self.cellDelegate?.didIncompletedButtonPress(sender.tag)
         self.completedBtn.setImage(UIImage(named: "radio"), for: .normal)
         self.inCompleteBtn.setImage(UIImage(named: "radio_selected"), for: .normal)
     }
     
     @IBAction func completedBtnClick(_ sender: UIButton) {
        
-        self.cellDelegate?.didIncompletedButtonPress(sender.tag)
+        self.cellDelegate?.didCompletedButtonPress(sender.tag)
         self.completedBtn.setImage(UIImage(named: "radio_selected"), for: .normal)
         self.inCompleteBtn.setImage(UIImage(named: "radio"), for: .normal)
     }

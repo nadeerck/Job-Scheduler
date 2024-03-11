@@ -21,7 +21,7 @@
             <Locations>
                <Location
                   uuid = "3684E08D-CDD7-4899-B08E-3BE673FA74BF - 9ef0ccdbbbf3b184"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Job_Scheduler.DatabaseHandler.addData() -&gt; ()"

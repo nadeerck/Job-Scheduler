@@ -77,6 +77,8 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func updateClick(_ sender: Any) {
+        data?.details = descriptionTxt.text ?? ""
+        data?.dueDate = dueDatetxtField.text ?? ""
         guard let data = data else { return }
         detailViewModel.updateData(data)
     }

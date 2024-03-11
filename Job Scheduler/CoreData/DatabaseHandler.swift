@@ -53,7 +53,7 @@ class DatabaseHandler {
     // MARK: Method for Update Task in coredata
     func updateTask(title: String, details: String, dueDate: String, status: Int) -> Bool {
         let  fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
-        fetchRequest.predicate = NSPredicate(format: "title = %@", title)
+        fetchRequest.predicate = NSPredicate(format: "title == %@", title)
         do {
             guard let result = try viewContext.fetch(fetchRequest) as? [NSManagedObject] else {
                 return false
@@ -63,12 +63,10 @@ class DatabaseHandler {
             updateObj.setValue(details, forKey: "details")
             updateObj.setValue(status, forKey: "status")
             updateObj.setValue(dueDate, forKey: "due_Date")
-            do {
-                try viewContext.save()
-                return true
-            } catch let error as NSError {
-                return false
-            }
+            
+            try viewContext.save()
+            return true
+            
         } catch let error as NSError {
             return false
         }
